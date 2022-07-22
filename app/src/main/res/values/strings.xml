@@ -1,4 +1,5 @@
 <resources>
+    <string name="back">Back</string>
     <string name="app_name">PokedexCompose</string>
     <string name="pokemon">Pokemon</string>
     <string name="pokedex">Pokedex</string>

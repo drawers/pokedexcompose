@@ -3,6 +3,8 @@ package com.tsongkha.pokedexcompose.ui.detail
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -52,8 +54,24 @@ internal fun Detail(viewState: DetailViewState) {
 @Composable
 private fun DetailAppBar(title: String, number: String) {
     SmallTopAppBar(
+        navigationIcon = {
+            IconButton(
+                onClick = { },
+
+                ) {
+                Icon(
+                    modifier = Modifier.fillMaxWidth(),
+                    imageVector = Icons.Rounded.ArrowBack,
+                    contentDescription = stringResource(id = R.string.back),
+                    tint = MaterialTheme.colorScheme.background
+                )
+            }
+        },
         title = {
-            Row(modifier = Modifier.fillMaxWidth()) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
                 Text(text = title, fontWeight = FontWeight.Bold)
                 Text(text = number, fontWeight = FontWeight.Bold)
             }
