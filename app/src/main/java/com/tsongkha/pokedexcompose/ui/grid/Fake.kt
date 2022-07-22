@@ -1,7 +1,9 @@
 package com.tsongkha.pokedexcompose.ui.grid
 
+import kotlinx.collections.immutable.persistentListOf
+
 internal object Fake {
-    internal val pokemons = listOf(
+    internal val pokemons = persistentListOf(
         PokemonViewState(
             id = "1",
             url = "https://pokeapi.co/api/v2/pokemon/1/",

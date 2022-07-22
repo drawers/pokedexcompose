@@ -1,6 +1,5 @@
 package com.tsongkha.pokedexcompose.ui.grid
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -21,13 +20,21 @@ import androidx.palette.graphics.Palette
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.tsongkha.pokedexcompose.R
-import com.tsongkha.pokedexcompose.ui.common.PokedexAppBar
 import com.tsongkha.pokedexcompose.ui.theme.PokedexComposeTheme
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 
 @Composable
-internal fun PokemonGrid(
+internal fun GridScreen(
+    pokemons: ImmutableList<PokemonViewState>
+) {
+    Scaffold(topBar = { PokedexAppBar(stringResource(R.string.pokemon)) }) {
+        PokemonGrid(paddingValues = it, pokemons = pokemons)
+    }
+}
+
+@Composable
+private fun PokemonGrid(
     pokemons: ImmutableList<PokemonViewState>,
     paddingValues: PaddingValues,
 ) {
@@ -42,6 +49,17 @@ internal fun PokemonGrid(
     ) {
         items(pokemons, itemContent = { PokemonCard(pokemon = it) })
     }
+}
+
+@Composable
+private fun PokedexAppBar(text: String) {
+    SmallTopAppBar(
+        title = { Text(text = text, fontWeight = FontWeight.Bold) },
+        colors = TopAppBarDefaults.smallTopAppBarColors(
+            containerColor = MaterialTheme.colorScheme.primary,
+            titleContentColor = MaterialTheme.colorScheme.onPrimary
+        )
+    )
 }
 
 @Composable
@@ -110,5 +128,3 @@ private fun PokemonGridPreview() {
         }
     }
 }
-
-

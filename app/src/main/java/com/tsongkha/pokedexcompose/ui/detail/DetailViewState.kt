@@ -7,6 +7,7 @@ import kotlinx.collections.immutable.ImmutableList
 @Immutable
 internal data class DetailViewState(
     val name: String,
+    val number: String,
     val types: ImmutableList<Type>,
     val height: Stat,
     val weight: Stat,
