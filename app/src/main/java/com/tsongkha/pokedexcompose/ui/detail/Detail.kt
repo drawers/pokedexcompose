@@ -190,5 +190,5 @@ private fun RoundedBar() {
 @Preview
 @Composable
 private fun DetailPreview() {
-    Detail(Fake.fake)
+    Detail(Fake.detail)
 }

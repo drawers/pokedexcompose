@@ -3,7 +3,7 @@ package com.tsongkha.pokedexcompose.ui.detail
 import kotlinx.collections.immutable.persistentListOf
 
 internal object Fake {
-    val fake = DetailViewState(
+    val detail = DetailViewState(
         name = "bulbasaur",
         number = "#001",
         types = persistentListOf(DetailViewState.Type.GRASS, DetailViewState.Type.POISON),
