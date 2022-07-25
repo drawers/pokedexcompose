@@ -20,7 +20,7 @@ import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 
 @Composable
-internal fun Detail(viewState: DetailViewState) {
+internal fun DetailScreen(viewState: DetailViewState) {
     PokedexComposeTheme {
         Scaffold(topBar = {
             DetailAppBar(
@@ -193,5 +193,5 @@ private fun RoundedBar() {
 @Preview
 @Composable
 private fun DetailPreview() {
-    Detail(Fake.detail)
+    DetailScreen(Fake.detail)
 }
