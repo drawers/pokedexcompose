@@ -12,7 +12,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.drawable.toBitmap
@@ -54,7 +53,7 @@ private fun PokemonGrid(
 @Composable
 private fun PokedexAppBar(text: String) {
     SmallTopAppBar(
-        title = { Text(text = text, fontWeight = FontWeight.Bold) },
+        title = { Text(text = text, style = MaterialTheme.typography.titleLarge) },
         colors = TopAppBarDefaults.smallTopAppBarColors(
             containerColor = MaterialTheme.colorScheme.primary,
             titleContentColor = MaterialTheme.colorScheme.onPrimary
@@ -103,7 +102,7 @@ private fun PokemonCard(
         ) {
             Text(
                 text = pokemon.name,
-                fontWeight = FontWeight.Bold,
+                style = MaterialTheme.typography.titleMedium,
                 color = MaterialTheme.colorScheme.onBackground
             )
         }

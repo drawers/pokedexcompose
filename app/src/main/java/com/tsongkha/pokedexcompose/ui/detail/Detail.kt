@@ -12,7 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.tsongkha.pokedexcompose.R
@@ -63,7 +62,7 @@ private fun DetailAppBar(title: String, number: String) {
                     modifier = Modifier.fillMaxWidth(),
                     imageVector = Icons.Rounded.ArrowBack,
                     contentDescription = stringResource(id = R.string.back),
-                    tint = MaterialTheme.colorScheme.background
+                    tint = MaterialTheme.colorScheme.onBackground
                 )
             }
         },
@@ -72,8 +71,8 @@ private fun DetailAppBar(title: String, number: String) {
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Text(text = title, fontWeight = FontWeight.Bold)
-                Text(text = number, fontWeight = FontWeight.Bold)
+                Text(text = title, style = MaterialTheme.typography.titleLarge)
+                Text(text = number, style = MaterialTheme.typography.titleLarge)
             }
         },
         colors = TopAppBarDefaults.smallTopAppBarColors(
@@ -94,7 +93,8 @@ private fun DetailTitle(
             .padding(top = 12.dp, bottom = 8.dp)
     ) {
         Text(
-            text = text, fontWeight = FontWeight.Bold,
+            text = text,
+            style = MaterialTheme.typography.displaySmall
         )
     }
 }
@@ -141,9 +141,12 @@ private fun Stats(stats: ImmutableList<DetailViewState.Stat>) {
 
 @Composable
 private fun StatBox(stat: DetailViewState.Stat) {
-    Column {
-        Text("${stat.stat} ${stat.suffix}", fontWeight = FontWeight.Bold)
-        Text(stat.caption, fontWeight = FontWeight.Light)
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(
+            "${stat.stat} ${stat.suffix}",
+            style = MaterialTheme.typography.titleLarge,
+        )
+        Text(stat.caption, style = MaterialTheme.typography.bodySmall)
     }
 }
 
