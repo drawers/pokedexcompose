@@ -1,8 +1,5 @@
 package com.tsongkha.pokedexcompose.ui.grid
 
-import androidx.compose.runtime.Immutable
-
-@Immutable
 internal data class PokemonViewState(
     val id: String,
     val url: String,

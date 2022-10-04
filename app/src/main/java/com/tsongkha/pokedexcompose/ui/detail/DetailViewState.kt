@@ -1,10 +1,8 @@
 package com.tsongkha.pokedexcompose.ui.detail
 
-import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
 import kotlinx.collections.immutable.ImmutableList
 
-@Immutable
 internal data class DetailViewState(
     val name: String,
     val number: String,
@@ -13,14 +11,12 @@ internal data class DetailViewState(
     val weight: Stat,
 ) {
 
-    @Immutable
     data class Stat(
         val stat: String,
         val suffix: String,
         val caption: String,
     )
 
-    @Immutable
     enum class Type(val color: Color) {
         FIGHTING(Color(0xFF9F422A)),
         FLYING(Color(0xFF90B1C5)),
